@@ -1,5 +1,10 @@
 class Thing():
-    pass
+    def isBeatenByRock(self):
+        return None
+    def isBeatenByPaper(self):
+        return None
+    def isBeatenByScissors(self):
+        return None
 
 class Rock(Thing):
     def beats(self, opponent):
@@ -19,16 +24,17 @@ class Rock(Thing):
         >>> Rock().beats(Thing()) is None
         True
         """
-        if isinstance(opponent, Rock):
-            return None
-        elif isinstance(opponent, Scissors):
-            return True
-        elif isinstance(opponent, Paper):
-            return False
-        else:
-            return None
+        return opponent.isBeatenByRock()
 
+    def isBeatenByRock(self):
+        return None
 
+    def isBeatenByPaper(self):
+        return True
+
+    def isBeatenByScissors(self):
+        return False
+    
 class Paper(Thing):
     def beats(self, opponent):
         """Paper envelops Rock
@@ -47,15 +53,16 @@ class Paper(Thing):
         >>> Paper().beats(Paper()) is None
         True
         """
-        if isinstance(opponent, Rock):
-            return True
-        elif isinstance(opponent, Scissors):
-            return False
-        elif isinstance(opponent, Paper):
-            return None
-        else:
-            return None
-        
+        return opponent.isBeatenByPaper()
+    
+    def isBeatenByRock(self):
+        return False
+
+    def isBeatenByPaper(self):
+        return None
+
+    def isBeatenByScissors(self):
+        return True
     
 class Scissors(Thing):
     def beats(self, opponent):
@@ -75,16 +82,18 @@ class Scissors(Thing):
         >>> Scissors().beats(Thing()) is None
         True
         """
-        if isinstance(opponent, Rock):
-            return False
-        elif isinstance(opponent, Scissors):
-            return None
-        elif isinstance(opponent, Paper):
-            return True
-        else:
-            return None
+        return opponent.isBeatenByScissors()
+    
+    def isBeatenByRock(self):
+        return True
 
-        
+    def isBeatenByPaper(self):
+        return False
+
+    def isBeatenByScissors(self):
+        return None
+
+    
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
