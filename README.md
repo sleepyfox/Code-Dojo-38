@@ -1,5 +1,5 @@
 # Code Dojo 38
-This is my worked example from the th meeting of the London Code Dojo. Feel free to play around with it. 
+This is my worked example from the 38th meeting of the London Code Dojo. Feel free to play around with it. 
 
 The tests can be run from the command-line with:
 
