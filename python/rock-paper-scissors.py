@@ -11,7 +11,7 @@ class Rock(Thing):
         """Rock is enveloped by Paper
         >>> Rock().beats(Paper())
         False
-        
+
         Rock blunts Scissors
         >>> Rock().beats(Scissors())
         True
@@ -34,13 +34,13 @@ class Rock(Thing):
 
     def isBeatenByScissors(self):
         return False
-    
+
 class Paper(Thing):
     def beats(self, opponent):
         """Paper envelops Rock
         >>> Paper().beats(Rock())
         True
-        
+
         Paper is cut by Scissors
         >>> Paper().beats(Scissors())
         False
@@ -54,7 +54,7 @@ class Paper(Thing):
         True
         """
         return opponent.isBeatenByPaper()
-    
+
     def isBeatenByRock(self):
         return False
 
@@ -63,13 +63,13 @@ class Paper(Thing):
 
     def isBeatenByScissors(self):
         return True
-    
+
 class Scissors(Thing):
     def beats(self, opponent):
         """Scissors cut Paper
         >>> Scissors().beats(Paper())
         True
-        
+
         Scissors are blunted by Rock
         >>> Scissors().beats(Rock())
         False
@@ -83,7 +83,7 @@ class Scissors(Thing):
         True
         """
         return opponent.isBeatenByScissors()
-    
+
     def isBeatenByRock(self):
         return True
 
@@ -93,7 +93,7 @@ class Scissors(Thing):
     def isBeatenByScissors(self):
         return None
 
-    
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
